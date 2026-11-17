@@ -1,0 +1,854 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rosa: #f52d91;
+    --rosa-claro: #ffe2f1;
+    --lilas: #a46cf5;
+    --azul: #36cce0;
+    --coral: #ff796f;
+    --amarelo: #ffd45c;
+    --texto: #593454;
+    --branco: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--texto);
+    background: #fff8fc;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.topo {
+    min-height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 12px 6%;
+    background: white;
+    box-shadow: 0 4px 20px #c44b8112;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 43px;
+    font-weight: 700;
+    color: #713c93;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--rosa);
+    font-style: italic;
+}
+
+.logo small {
+    display: block;
+    font: 600 9px "DM Sans", sans-serif;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #a66b9c;
+}
+
+.topo nav {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.topo nav a {
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.topo nav a:hover {
+    color: var(--rosa);
+}
+
+.acoes {
+    display: flex;
+    gap: 15px;
+}
+
+.acoes button {
+    border: none;
+    background: #fff0f8;
+    color: var(--rosa);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 23px;
+    position: relative;
+}
+
+.contador {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--lilas);
+    color: white;
+    border-radius: 50%;
+    font-size: 11px;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+}
+
+.hero {
+    padding: 55px 7%;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 50px;
+    align-items: center;
+    background: linear-gradient(
+        125deg,
+        #ffe1f0,
+        #f0e5ff 52%,
+        #d9faff
+    );
+}
+
+.hero-texto {
+    max-width: 500px;
+}
+
+.etiqueta-texto {
+    display: inline-block;
+    background: white;
+    color: var(--rosa);
+    padding: 7px 15px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font: 700 clamp(48px, 6vw, 78px)/1.13 "Playfair Display", serif;
+    color: #653579;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--rosa);
+    font-style: italic;
+}
+
+.hero-texto > p {
+    max-width: 420px;
+    font-size: 15px;
+    color: #795b80;
+    margin-bottom: 27px;
+}
+
+.botao {
+    display: inline-block;
+    padding: 13px 23px;
+    background: linear-gradient(100deg, var(--rosa), #ff729f);
+    color: white;
+    border: 0;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 7px 18px #f52d9130;
+    transition: .3s;
+}
+
+.botao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px #f52d9140;
+}
+
+.detalhe {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 30px;
+    font-size: 11px;
+    color: #865b88;
+}
+
+.detalhe span {
+    color: var(--rosa);
+    font-size: 24px;
+}
+
+.hero-foto {
+    height: 430px;
+    position: relative;
+}
+
+.hero-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px 100px 28px 28px;
+    border: 7px solid white;
+    box-shadow: 0 15px 35px #9d5c9325;
+}
+
+.adesivo {
+    position: absolute;
+    bottom: 22px;
+    left: -22px;
+    background: var(--amarelo);
+    color: #713c70;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4;
+    transform: rotate(-9deg);
+    box-shadow: 0 8px 20px #a86e3425;
+}
+
+.adesivo span {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.adesivo strong {
+    font: 700 20px "Playfair Display", serif;
+}
+
+.beneficios {
+    padding: 22px 6%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: linear-gradient(100deg, #ff4fa3, #a46cf5, #35cce0);
+    color: white;
+}
+
+.beneficios div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 8px;
+}
+
+.beneficios span {
+    font-size: 26px;
+}
+
+.beneficios p {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.secao {
+    padding: 75px 6%;
+}
+
+.cabecalho-secao {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.subtitulo {
+    color: var(--rosa);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.cabecalho-secao h2,
+.sobre-conteudo h2 {
+    font: 600 clamp(32px, 4vw, 45px)/1.3 "Playfair Display", serif;
+    color: #673b7c;
+    margin: 7px 0;
+}
+
+.cabecalho-secao h2 span,
+.sobre-conteudo h2 span {
+    color: var(--rosa);
+    font-style: italic;
+}
+
+.cabecalho-secao > p {
+    color: #947695;
+    font-size: 14px;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.filtro {
+    padding: 9px 20px;
+    border: 1px solid #edc7e3;
+    border-radius: 30px;
+    background: white;
+    color: #89558b;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.filtro:hover,
+.filtro.ativo {
+    background: var(--rosa);
+    border-color: var(--rosa);
+    color: white;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.produto {
+    background: white;
+    border: 1px solid #f5dcec;
+    border-radius: 17px;
+    overflow: hidden;
+    box-shadow: 0 7px 24px #b64f8710;
+    transition: .3s;
+}
+
+.produto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 13px 30px #b64f8725;
+}
+
+.produto.escondido {
+    display: none;
+}
+
+.foto {
+    height: 330px;
+    position: relative;
+    overflow: hidden;
+    background: #f8e9f3;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s;
+}
+
+.produto:hover .foto img {
+    transform: scale(1.06);
+}
+
+.selo {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    background: var(--rosa);
+    color: white;
+    border-radius: 30px;
+    padding: 6px 11px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.selo-lilas {
+    background: var(--lilas);
+}
+
+.produto-info {
+    padding: 19px;
+}
+
+.categoria {
+    color: var(--rosa);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.produto-info h3 {
+    font: 600 22px "Playfair Display", serif;
+    color: #673b7c;
+    margin: 5px 0;
+}
+
+.descricao {
+    color: #987b99;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.preco {
+    display: block;
+    font-size: 19px;
+    color: #e92e8b;
+    margin-bottom: 15px;
+}
+
+.adicionar {
+    width: 100%;
+    padding: 12px 5px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #ff4fa3, #a46cf5);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.adicionar:hover {
+    filter: saturate(1.2);
+    transform: translateY(-2px);
+}
+
+.sobre {
+    padding: 75px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    background: linear-gradient(125deg, #f0e4ff, #ffe3f0, #ddfaff);
+}
+
+.sobre-foto {
+    position: relative;
+    height: 440px;
+}
+
+.sobre-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 7px solid white;
+    border-radius: 25px;
+    box-shadow: 10px 10px 0 #ffadd7;
+}
+
+.cartao-foto {
+    position: absolute;
+    bottom: 20px;
+    right: -18px;
+    padding: 15px 22px;
+    background: var(--amarelo);
+    color: #713c70;
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    transform: rotate(3deg);
+}
+
+.cartao-foto span {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.cartao-foto strong {
+    font: italic 20px "Playfair Display", serif;
+}
+
+.sobre-conteudo h2 {
+    font-size: clamp(34px, 4vw, 48px);
+    margin: 13px 0 22px;
+}
+
+.sobre-conteudo > p {
+    font-size: 14px;
+    color: #755c80;
+    margin-bottom: 15px;
+}
+
+.sobre-conteudo .frase-final {
+    color: #e42b88;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.frase {
+    padding: 65px 20px;
+    text-align: center;
+    background: linear-gradient(100deg, #ff4fa3, #a46cf5, #35cce0);
+    color: white;
+}
+
+.frase > span {
+    font-size: 35px;
+}
+
+.frase h2 {
+    font: italic 600 clamp(30px, 4vw, 42px) "Playfair Display", serif;
+}
+
+.frase p {
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+footer {
+    padding: 40px 20px 20px;
+    background: #fff0f8;
+    text-align: center;
+}
+
+footer .logo {
+    display: inline-block;
+}
+
+footer > p {
+    font-size: 12px;
+    color: #947695;
+    margin-top: 10px;
+}
+
+.links-footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 25px 0;
+    font-size: 12px;
+}
+
+.links-footer a:hover {
+    color: var(--rosa);
+}
+
+.direitos {
+    border-top: 1px solid #f0d5e7;
+    padding-top: 20px;
+}
+
+/* JANELAS */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    padding: 20px;
+    background: #71416c77;
+    z-index: 30;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.modal.aberto {
+    display: flex;
+}
+
+.modal-caixa {
+    width: 100%;
+    max-width: 430px;
+    padding: 35px;
+    margin: auto;
+    position: relative;
+    background: white;
+    border: 2px solid #ffd0e7;
+    border-radius: 22px;
+    box-shadow: 0 15px 60px #713c7030;
+}
+
+.modal-caixa > .logo {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.modal-caixa h2 {
+    font: 600 26px "Playfair Display", serif;
+    text-align: center;
+    color: #713c93;
+    margin-bottom: 10px;
+}
+
+.modal-caixa > p {
+    text-align: center;
+    font-size: 12px;
+    color: #987b99;
+}
+
+.fechar {
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--rosa);
+    font-size: 30px;
+}
+
+.modal-caixa form {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 20px;
+}
+
+.modal-caixa label {
+    font-size: 12px;
+    color: #755c80;
+}
+
+.modal-caixa input {
+    padding: 12px;
+    border: 1px solid #e8c9e4;
+    border-radius: 8px;
+    background: #fff8fc;
+    color: #593454;
+    outline: none;
+}
+
+.modal-caixa input:focus {
+    border-color: var(--rosa);
+}
+
+.entrar {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.modal-caixa small {
+    display: block;
+    text-align: center;
+    color: #987b99;
+    font-size: 10px;
+    margin-top: 15px;
+}
+
+.mensagem {
+    color: #bd287b !important;
+    margin: 12px 0;
+    overflow-wrap: anywhere;
+}
+
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1d8e9;
+    font-size: 12px;
+}
+
+.remover {
+    color: #e52d80;
+    background: #ffe5f1;
+    border: none;
+    border-radius: 8px;
+    padding: 6px;
+    font-size: 11px;
+}
+
+#totalCarrinho {
+    margin-top: 20px;
+    color: #d82c88;
+    font-size: 18px;
+}
+
+#itensCarrinho:empty::after {
+    content: "Sua bolsa está esperando por você! ♡";
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    color: #987b99;
+    font-size: 13px;
+}
+
+/* CELULARES E TABLETS */
+
+@media (max-width: 900px) {
+    .topo {
+        flex-wrap: wrap;
+        padding: 14px 5%;
+    }
+
+    .topo nav {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 45px 5%;
+        gap: 25px;
+    }
+
+    .produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sobre {
+        gap: 35px;
+        padding: 55px 5%;
+    }
+}
+
+@media (max-width: 600px) {
+    .topo {
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 35px;
+    }
+
+    .topo nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .topo nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 6%;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero-foto {
+        height: 310px;
+    }
+
+    .adesivo {
+        width: 90px;
+        height: 90px;
+        left: -8px;
+    }
+
+    .beneficios {
+        grid-template-columns: 1fr;
+    }
+
+    .beneficios div {
+        justify-content: flex-start;
+        padding-left: 10%;
+    }
+
+    .secao {
+        padding: 50px 5%;
+    }
+
+    .produtos {
+        gap: 12px;
+    }
+
+    .foto {
+        height: 220px;
+    }
+
+    .produto-info {
+        padding: 12px;
+    }
+
+    .produto-info h3 {
+        font-size: 17px;
+    }
+
+    .descricao {
+        font-size: 11px;
+    }
+
+    .preco {
+        font-size: 16px;
+    }
+
+    .sobre {
+        grid-template-columns: 1fr;
+        padding: 45px 7%;
+    }
+
+    .sobre-foto {
+        height: 330px;
+        margin-right: 8px;
+    }
+
+    .cartao-foto {
+        right: -8px;
+    }
+
+    .modal-caixa {
+        padding: 30px 22px;
+    }
+}
+
+@media (max-width: 360px) {
+    .produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .foto {
+        height: 320px;
+    }
+}
+
+/* ÁREA DE CONTATOS */
+
+.contatos-info {
+    margin: 25px auto;
+    padding: 22px;
+    max-width: 420px;
+    background: linear-gradient(135deg, #ffe2f1, #f0e5ff);
+    border-radius: 18px;
+    box-shadow: 0 5px 18px #c44b8120;
+}
+
+.contatos-info h3 {
+    font-family: "Playfair Display", serif;
+    color: #713c93;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.contatos-info p {
+    color: #713c93;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.contatos-info a {
+    color: #e92e8b;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.contatos-info a:hover {
+    text-decoration: underline;
+}

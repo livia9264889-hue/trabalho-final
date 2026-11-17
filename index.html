@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MaLí | Moda com amor</title>
+
+    <link rel="stylesheet" href="as++.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="topo">
+      <a href="#inicio" class="logo"
+        >Ma<span>Lí</span><small> MODA & ESTILO</small></a
+      >
+
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#colecoes">Coleções</a>
+        <a href="#sobre">Nossa história</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="acoes">
+        <button onclick="abrirLogin()" aria-label="Minha conta">♙</button>
+        <button onclick="abrirCarrinho()" aria-label="Minha bolsa">
+          ♧ <span class="contador" id="contador">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- APRESENTAÇÃO -->
+      <section class="hero" id="inicio">
+        <div class="hero-texto">
+          <span class="etiqueta-texto">NOVA COLEÇÃO • 2026</span>
+
+          <h1>Seu estilo,<br />suas regras,<br /><span>seu brilho.</span></h1>
+
+          <p>
+            Moda para mulheres que amam se expressar. Descubra peças lindas,
+            modernas e cheias de personalidade.
+          </p>
+
+          <a href="#colecoes" class="botao">EXPLORAR COLEÇÃO ↗</a>
+
+          <div class="detalhe">
+            <span>♡</span>
+            Feito com carinho por Maria Vilela e Lívia Reis.
+          </div>
+        </div>
+
+        <div class="hero-foto">
+          <img
+            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=85"
+            alt="Mulheres usando looks modernos e elegantes"
+          />
+
+          <div class="adesivo">
+            <span>SEJA</span>
+            <strong>ÚNICA!</strong>
+            <span>♡ MaLí</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFÍCIOS -->
+      <section class="beneficios">
+        <div>
+          <span>♡</span>
+          <p>Moda com personalidade</p>
+        </div>
+        <div>
+          <span>✧</span>
+          <p>Looks para todos os momentos</p>
+        </div>
+        <div>
+          <span>🎀</span>
+          <p>Feito com amor e amizade</p>
+        </div>
+      </section>
+
+      <!-- COLEÇÕES -->
+      <section class="secao" id="colecoes">
+        <div class="cabecalho-secao">
+          <span class="subtitulo">ESCOLHA SEU LOOK</span>
+          <h2>Um toque de <span>MaLí</span></h2>
+          <p>Encontre peças que combinam com você!</p>
+        </div>
+
+        <div class="filtros">
+          <button class="filtro ativo" onclick="filtrar('Todos', this)">
+            Todas
+          </button>
+          <button class="filtro" onclick="filtrar('Conjuntos', this)">
+            Conjuntos
+          </button>
+          <button class="filtro" onclick="filtrar('Vestidos', this)">
+            Vestidos
+          </button>
+          <button class="filtro" onclick="filtrar('Blusas', this)">
+            Blusas
+          </button>
+          <button class="filtro" onclick="filtrar('Calças', this)">
+            Calças
+          </button>
+        </div>
+
+        <div class="produtos">
+          <article class="produto" data-categoria="Conjuntos">
+            <div class="foto">
+              <img
+                src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=700&q=85"
+                alt="Look feminino moderno"
+              />
+              <span class="selo">MAIS AMADO</span>
+            </div>
+            <div class="produto-info">
+              <span class="categoria">CONJUNTOS</span>
+              <h3>Conjunto Charm</h3>
+              <p class="descricao">Elegância e conforto em um só look.</p>
+              <strong class="preco">R$ 189,90</strong>
+              <button
+                class="adicionar"
+                onclick="adicionar('Conjunto Charm', 189.9)"
+              >
+                Adicionar à bolsa ♡
+              </button>
+            </div>
+          </article>
+
+          <article class="produto" data-categoria="Vestidos">
+            <div class="foto">
+              <img
+                src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=700&q=85"
+                alt="Vestido feminino elegante"
+              />
+              <span class="selo selo-lilas">LINDA ESCOLHA</span>
+            </div>
+            <div class="produto-info">
+              <span class="categoria">VESTIDOS</span>
+              <h3>Vestido Encanto</h3>
+              <p class="descricao">Perfeito para ocasiões especiais.</p>
+              <strong class="preco">R$ 219,90</strong>
+              <button
+                class="adicionar"
+                onclick="adicionar('Vestido Encanto', 219.9)"
+              >
+                Adicionar à bolsa ♡
+              </button>
+            </div>
+          </article>
+
+          <article class="produto" data-categoria="Blusas">
+            <div class="foto">
+              <img
+                src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=700&q=85"
+                alt="Look feminino delicado"
+              />
+            </div>
+            <div class="produto-info">
+              <span class="categoria">BLUSAS</span>
+              <h3>Blusa Flor</h3>
+              <p class="descricao">Um toque delicado para seu dia.</p>
+              <strong class="preco">R$ 89,90</strong>
+              <button class="adicionar" onclick="adicionar('Blusa Flor', 89.9)">
+                Adicionar à bolsa ♡
+              </button>
+            </div>
+          </article>
+
+          <article class="produto" data-categoria="Calças">
+            <div class="foto">
+              <img
+                src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=700&q=85"
+                alt="Calça feminina e look casual"
+              />
+            </div>
+            <div class="produto-info">
+              <span class="categoria">CALÇAS</span>
+              <h3>Calça Elegance</h3>
+              <p class="descricao">Moderna, versátil e sofisticada.</p>
+              <strong class="preco">R$ 149,90</strong>
+              <button
+                class="adicionar"
+                onclick="adicionar('Calça Elegance', 149.9)"
+              >
+                Adicionar à bolsa ♡
+              </button>
+            </div>
+          </article>
+
+          <article class="produto" data-categoria="Vestidos">
+            <div class="foto">
+              <img
+                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=85"
+                alt="Inspiração de moda feminina"
+              />
+            </div>
+            <div class="produto-info">
+              <span class="categoria">VESTIDOS</span>
+              <h3>Vestido Primavera</h3>
+              <p class="descricao">Cor, charme e muita personalidade.</p>
+              <strong class="preco">R$ 199,90</strong>
+              <button
+                class="adicionar"
+                onclick="adicionar('Vestido Primavera', 199.9)"
+              >
+                Adicionar à bolsa ♡
+              </button>
+            </div>
+          </article>
+
+          <article class="produto" data-categoria="Conjuntos">
+            <div class="foto">
+              <img
+                src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=85"
+                alt="Look feminino fashion"
+              />
+            </div>
+            <div class="produto-info">
+              <span class="categoria">CONJUNTOS</span>
+              <h3>Conjunto Fashion</h3>
+              <p class="descricao">Para quem ama estar na moda.</p>
+              <strong class="preco">R$ 179,90</strong>
+              <button
+                class="adicionar"
+                onclick="adicionar('Conjunto Fashion', 179.9)"
+              >
+                Adicionar à bolsa ♡
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- HISTÓRIA DA LOJA -->
+      <section class="sobre" id="sobre">
+        <div class="sobre-foto">
+          <img
+            src="/AS LINdas/Design sem nome.png"
+            alt="Inspiração feminina e moda"
+          />
+
+          <div class="cartao-foto">
+            <span>DUAS AMIGAS</span>
+            <strong>Um só sonho ♡</strong>
+          </div>
+        </div>
+
+        <div class="sobre-conteudo">
+          <span class="subtitulo">MUITO PRAZER!</span>
+          <h2>Conheça a<br />história da <span>MaLí</span></h2>
+
+          <p>
+            MaLí é uma loja virtual de moda feminina criada em 2026 por duas
+            amigas, Maria Vilela e Lívia Reis. O projeto surgiu da ideia de
+            oferecer às mulheres uma maneira prática e bonita de conhecer
+            roupas, acompanhar tendências e encontrar peças que combinem com seu
+            estilo.
+          </p>
+
+          <p>
+            Problema: Muitas pessoas encontram dificuldades para localizar
+            roupas bonitas, modernas e organizadas em um só lugar.
+            <br />Solução: Criamos uma loja virtual que apresenta coleções de
+            roupas, facilita a visualização dos produtos e permite que as
+            clientes explorem diferentes opções de moda.
+          </p>
+
+          <p>
+            Principais funções: Página inicial com apresentação da loja.
+            Catálogo de roupas e coleções. Área de favoritos. Carrinho de
+            compras. Página Nossa história. Área de contato e identificação do
+            usuário.
+          </p>
+          <p>
+            Como utilizar: Ao entrar no site, a cliente encontra a página
+            inicial. Pelo menu, pode acessar as coleções, conhecer a história da
+            loja e entrar em contato. Também pode visualizar os produtos,
+            adicionar favoritos e utilizar o carrinho.
+          </p>
+
+          <p class="frase-final">
+            Mais que uma loja, um sonho construído por duas amigas. 💕
+          </p>
+
+          <a href="#colecoes" class="botao">VENHA CONHECER ↗</a>
+        </div>
+      </section>
+
+      <!-- FRASE -->
+      <section class="frase">
+        <span>✿</span>
+        <h2>Vista sua essência.</h2>
+        <p>Seja delicada, seja ousada, seja você. Seja MaLí!</p>
+      </section>
+    </main>
+
+    <footer id="contato">
+
+<footer id="contato">
+
+    <a href="#inicio" class="logo">
+        Ma<span>Lí</span>
+    </a>
+
+    <p>Moda feita para você brilhar.</p>
+
+    <div class="contatos-info">
+        <h3>Entre em contato conosco 💗</h3>
+
+        <p>
+            ✉ E-mail:
+            <a href="mailto:contato@mali.com.br">
+                contato@mali.com.br
+            </a>
+        </p>
+
+        <p>
+            ☎ Telefone:
+            <a href="tel:+5535999999999">
+                (35) 99999-9999
+            </a>
+        </p>
+    </div>
+
+    <div class="links-footer">
+        <a href="#inicio">Início</a>
+        <a href="#colecoes">Coleções</a>
+        <a href="#sobre">Nossa história</a>
+        <a href="#contato">Contato</a>
+    </div>
+
+    <p class="direitos">
+        © 2026 MaLí — Maria Vilela e Lívia Reis.
+        Todos os direitos reservados.
+    </p>
+
+</footer>
+
+      <a href="#inicio" class="logo">Ma<span>Lí</span></a>
+
+      <p>Moda feita para você brilhar.</p>
+
+      <div class="links-footer">
+        <a href="#inicio">Início</a>
+        <a href="#colecoes">Coleções</a>
+        <a href="#sobre">Nossa história</a>
+        <a href="mailto:contato@mali.com">E-mail</a>
+      </div>
+
+      <p class="direitos">
+        © 2026 MaLí — Maria Vilela e Lívia Reis. Todos os direitos reservados.
+      </p>
+    </footer>
+
+    <!-- LOGIN -->
+    <div class="modal" id="modalLogin">
+      <div class="modal-caixa">
+        <button class="fechar" onclick="fecharLogin()">×</button>
+
+        <a href="#inicio" class="logo">Ma<span>Lí</span></a>
+        <h2>Olá, linda! 💕</h2>
+        <p>Entre para continuar sua experiência.</p>
+
+        <form id="formLogin">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Digite seu e-mail"
+            required
+          />
+
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            placeholder="Digite sua senha"
+            required
+          />
+
+          <button type="submit" class="botao entrar">ENTRAR</button>
+        </form>
+
+        <p id="mensagemLogin" class="mensagem"></p>
+        <small>Login demonstrativo, sem armazenamento de dados.</small>
+      </div>
+    </div>
+
+    <!-- BOLSA -->
+    <div class="modal" id="modalCarrinho">
+      <div class="modal-caixa">
+        <button class="fechar" onclick="fecharCarrinho()">×</button>
+
+        <h2>Sua bolsa de compras ♡</h2>
+
+        <div id="itensCarrinho"></div>
+
+        <h3 id="totalCarrinho">Total: R$ 0,00</h3>
+
+        <button class="botao entrar" onclick="finalizarCompra()">
+          FINALIZAR PEDIDO
+        </button>
+
+        <p id="mensagemCompra" class="mensagem"></p>
+      </div>
+    </div>
+
+    <script src="as++.js"></script>
+  </body>
+</html>
